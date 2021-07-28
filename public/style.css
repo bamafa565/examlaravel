@@ -1,0 +1,6 @@
+.s-styles {
+  padding-bottom: var(--vspace-4);
+}
+input{
+border-radius:5px 5px 5px 5px;
+}
