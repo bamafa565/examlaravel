@@ -182,7 +182,7 @@
     </div>
 
     <div class="col-md-4">
-      <a href="">
+      <a href="{{Route('vendeur')}}">
           <div class="link">
             <i class="fa fa-medkit"></i>
             <div class="clear"></div><span>NOUVEAU VENDEUR</span>

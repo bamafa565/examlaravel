@@ -10,7 +10,9 @@ CommandesController
 ,StockController,
 VenteController,
 CommandeCourController,
-venduController,consController
+venduController,consController,
+VendeurController,
+LoginVendeurControleur
 };
 /*
 |--------------------------------------------------------------------------
@@ -92,3 +94,9 @@ Route::get('/patients/layout',[PatientController::class,'index'])->name('patient
  Route::get('/vente/show',[venduController::class,'index'])->name('vente.show');
  Route::post('/vente/create',[VenteController::class,'store'])->name('vente.store');
 // Route::get('/stock',[StockController::class,'index'])->name('stock');
+ Route::get('/vendeur',[VendeurController::class,'index'])->name('vendeur');
+ Route::post('/vendeur.store',[VendeurController::class,'store'])->name('vendeur.store');
+ Route::get('/vendeur.create',[VendeurController::class,'create'])->name('vendeur.create');
+
+//login vendeur
+Route::post('/loginvendeur',[LoginVendeurControleur::class,'authenticate'])->name('loginvendeur');

@@ -1,6 +1,7 @@
 @extends('menu.menu')
 @section('con')
 @include('menu.nav')
+
 <div class="container">
 <table class='table table-hover'>
 <center>
@@ -40,10 +41,12 @@
 
 
         </tbody>
+
     </table>
     </div>
 
       @include('footer.footer')
+
 @endsection
 
 

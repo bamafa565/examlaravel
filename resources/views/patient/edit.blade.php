@@ -4,10 +4,10 @@
 <div class="container">
 
 <center>
-@foreach($patients as $fam)
+
 <h1>MODIFIER PATIENTS</h1>
- <form id="formID" action="{{route('patients.store')}}" method="post">
- @csrf
+ <form id="formID" action="{{route('patients.store','$id')}}" method="post">
+      @csrf
 
               <label class="">Nom : <span style="color:red; font-weight: bold; font-family: Arial, sans-serif ;">(*)</span></label>
               <div class="input-group">
@@ -57,7 +57,7 @@
           <hr id='success'>
 
       </form>
-          @endforeach
+
       </center>
 
 @endsection

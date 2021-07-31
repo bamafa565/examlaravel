@@ -3,20 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\patients;
-class PatientController extends Controller
+use App\Models\{Personnel,Vendeur,Medicament};
+use App\Http\Controllers\VendeurController;
+
+class LoginVendeurControleur extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function authenticate(Request $request){
+             // Retrive Input
+             $email = $request->email;
+              $pass= $request->password;
+
+
+             if (Vendeur::where('emailperso'==$email ,'password'==$pass)) {
+                 // if success login
+                   $medicament=Medicament::all();
+                             return view('vente.layout',[
+
+                              'Medicament'=>$medicament]);
+
+                 //return redirect()->intended('/details');
+             }
+             // if failed login
+             return redirect('login');
+         }
+
     public function index()
     {
-        $patient=patients::all();
-                return view('patient.patient',[
-                'patient'=>$patient
-                ]);
+
     }
 
     /**
@@ -26,7 +45,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-       return view('patient.index');
+        //
     }
 
     /**
@@ -37,26 +56,8 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        patients::create([
-           'nom'=>$request->nom,
-           'prenom'=>$request->prenom,
-           'sexe'=>$request->sexe,
-           'age'=>$request->age,
-           'adress'=>$request->adress,
-           'temperature'=>$request->temperature,
-            'poids'=>$request->poids,
-
-       ]);
-         $patient=patients::all();
-       return view('patient.patient',[
-          'patient'=>$patient]
-       );
-
-
+        //
     }
-
-
-
 
     /**
      * Display the specified resource.
@@ -66,8 +67,7 @@ class PatientController extends Controller
      */
     public function show($id)
     {
-
-
+        //
     }
 
     /**
@@ -78,10 +78,7 @@ class PatientController extends Controller
      */
     public function edit($id)
     {
-       $patients= patients::find($id);
-       return view('patient.index',[
-      'patients'=>$patients
-       ]);
+        //
     }
 
     /**
@@ -94,10 +91,6 @@ class PatientController extends Controller
     public function update(Request $request, $id)
     {
         //
-          $patient=patients::find('$patient->id');
-             return view('patient.edit',[
-                           'patient'=>$patient
-                            ]);
     }
 
     /**
@@ -108,13 +101,6 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-    $patient=patients::all();
-      $post=patients::find($id);
-       $post->delete();
-     return view('patient.patient',
-     [
-     'patient'=>$patient
-     ]);
-
+        //
     }
 }

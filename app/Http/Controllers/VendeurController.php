@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\PersonnelController;
 use Illuminate\Http\Request;
-
+use App\Models\{Personnel,Vendeur};
 class VendeurController extends Controller
 {
     /**
@@ -13,7 +13,12 @@ class VendeurController extends Controller
      */
     public function index()
     {
-        //
+        $personnel=Personnel::all();
+
+                return view('vendeur.layout',[
+                 'personnel'=>$personnel,
+
+                ]);
     }
 
     /**
@@ -23,7 +28,7 @@ class VendeurController extends Controller
      */
     public function create()
     {
-        //
+        return view('vendeur.login');
     }
 
     /**
@@ -34,7 +39,18 @@ class VendeurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Vendeur::create([
+          'nomperso'=>$request->nom,
+          'prenomperso'=>$request->prenom,
+          'numTelperso'=>$request->numero,
+          'adressPerso'=>$request->adress,
+          'emailperso'=>$request->mail,
+          'password'=>$request->password,
+          'fonctionperso'=>$request->fonction
+          ]);
+
+      //$personnel=Personnel::all();
+             return view('dashbord.layout');
     }
 
     /**
