@@ -7,17 +7,13 @@
 <h1>LISTE DES MEDICAMENTS VENDU</h1>
 </center>
 <div style="float:right">
- <a class="btn btn-primary right" href="{{ route('vente.create') }}">ADD</a>
+ <a class="btn btn-primary right" href="{{ route('vente.index') }}">ADD</a>
 </div>
         <thead>
        <th>MATRICULE</th>
         <th>DATE</th>
         <th>LIBELLE</th>
         <th>PRIX</th>
-
-
-
-
         </thead>
         <tbody>
         @foreach($vente as $vent)

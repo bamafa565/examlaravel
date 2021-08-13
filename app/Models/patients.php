@@ -4,16 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class patients extends Model
 {
- protected $fillable=[
-         'nom',
-         'prenom',
-         'sexe',
-          'age',
-          'adress',
-           'temperature',
-         'poids',
-       ];
+   use SoftDeletes;
+  protected $guarded=[];
 }

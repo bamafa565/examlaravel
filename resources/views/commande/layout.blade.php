@@ -23,7 +23,7 @@
  </div><br>
 
     <div class="col-md-4">
-      <a href="{{route('commande.new')}}">
+      <a href="{{route('commande.create')}}">
           <div class="link">
             <i class="fa fa-plus"></i>
             <div class="clear"></div><span>nouvelle commande</span>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="col-md-4">
-      <a href="{{ route('commande.encour') }}">
+      <a href="{{ route('commandes.index') }}">
           <div class="link">
             <i class="fa fa-ambulance"></i>
             <div class="clear"></div><span>commande en cours </span>

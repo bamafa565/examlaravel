@@ -7,7 +7,7 @@
 <h1>LISTE DES PATIENTS</h1>
 </center>
 <div style="float:right">
- <a class="btn btn-primary right" href="{{ route('consultation') }}">ADD</a>
+ <a class="btn btn-primary right" href="{{ route('consultation.index') }}">ADD</a>
 </div>
         <thead>
        <th>MATRICULE</th>

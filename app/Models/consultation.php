@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class consultation extends Model
 {
-   protected $fillable=[
-   'nom',
-   'Prenom',
-   'medecin',
-   'observation',
-   'date',
-   ];
+  protected $guarded=[];
+//    protected $fillable=[
+//    'nom',
+//    'Prenom',
+//    'medecin',
+//    'observation',
+//    'date',
+//    ];
 }

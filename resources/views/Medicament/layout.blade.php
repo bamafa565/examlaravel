@@ -28,8 +28,8 @@
         <td> {{$med->description}}</td>
         <td> {{$med->prix}}</td>
         <td> {{$med->dosage}}</td>
-        <td> <a href="{{route('Medicament.store',['id'=>$med->id])}}" class="btn btn-warning">EDIT</a></td>
-         <td> <a href="{{route('Medicament.destroy',['id'=>$med->id])}}"class="btn btn-danger">DELETE</a></td>
+        <td> <a href="{{route('Medicament.edit',$med->id)}}" class="btn btn-warning">EDIT</a></td>
+         <td> <a href="{{route('Medicament.destroy',$med->id)}}"class="btn btn-danger">DELETE</a></td>
 </tr>
 
         @endforeach

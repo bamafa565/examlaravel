@@ -78,8 +78,8 @@ class PersonnelController extends Controller
     {
 
             $personnel=Personnel::find($id);
-           dd($personnel);
-            //$personnel=Personnel::all();
+
+
             return view('personnel.edit',[
            'personnel'=>$personnel,
 //            'personnel'=>$personnel,
@@ -118,12 +118,12 @@ class PersonnelController extends Controller
      */
     public function destroy($id)
     {
-    $post=Personnel::find($id);
-        $post->delete();
- $personnel=Personnel::all();
-        return view('personnel.layout',[
-        'personnel'=>$personnel
-        ]);
+     $post=Personnel::find($id);
+     $post->delete();
+     $personnel=Personnel::all();
+     return view('personnel.layout',[
+     'personnel'=>$personnel
+      ]);
     // return view('personnel.index');
     }
 }

@@ -22,7 +22,7 @@ class CreateMedicamentsTable extends Migration
             $table->Date('datefabri');
             $table->date('dateperem');
             $table->string('dosage');
-
+            $table->timestamps();
         });
     }
 

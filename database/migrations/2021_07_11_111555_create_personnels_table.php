@@ -21,7 +21,7 @@ class CreatePersonnelsTable extends Migration
             $table->string('adressPerso');
             $table->string('emailperso');
             $table->string('fonctionperso');
-           // $table->timestamps();
+            $table->timestamps();
         });
     }
 

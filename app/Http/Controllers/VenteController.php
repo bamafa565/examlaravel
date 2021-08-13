@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{vente,Medicament};
-//use App\Http\Controllers\MedicamentController;
+use App\Http\Controllers\MedicamentController;
 class VenteController extends Controller
 {
     /**
@@ -27,7 +27,11 @@ class VenteController extends Controller
      */
     public function create()
     {
-        //
+         $vente=Vente::all();
+      //   dd($vente);
+         return view('vente.show',[
+         'vente'=>$vente
+          ]);
     }
 
     /**

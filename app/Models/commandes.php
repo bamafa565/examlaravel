@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class commandes extends Model
 {
-
-    protected $fillable=['libelle',
-            'quantite',
-            'adressfourni',
-            'Numfourni',
-            'datecom',
-            'dateLivraison'];
+     protected $guarded=[];
+//     protected $fillable=['libelle',
+//             'quantite',
+//             'adressfourni',
+//             'Numfourni',
+//             'datecom',
+//             'dateLivraison'];
 }

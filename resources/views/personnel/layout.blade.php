@@ -27,11 +27,10 @@
         <td> {{$person->adressPerso}}</td>
         <td> {{$person->emailperso}}</td>
          <td> {{$person->fonctionperso}}</td>
-         <td> <a href="{{route('personnel.edit',['id'=>$person->id])}}" class="btn btn-warning">EDIT</a></td>
-         <td> <a href="{{route('personnel.destroy',['id'=>$person->id])}}"class="btn btn-danger">DELETE</a></td>
+         <td> <a href="{{route('personnel.edit',$person->id)}} " class="btn btn-warning">EDIT</a></td>
+         <td> <a href="{{route('personnel.destroy',$person->id)}} "class="btn btn-danger">DELETE</a></td>
         </tr>
-
-        @endforeach
+      @endforeach
 
 
         </tbody>

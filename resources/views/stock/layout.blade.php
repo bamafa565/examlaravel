@@ -33,8 +33,8 @@
         <td> {{$pat->adress}}</td>
         <td> {{$pat->temperature}} degres</td>
         <td> {{$pat->poids}} kg</td>
-          <td> <a href="{{route('patients.edit',['id'=>$pat->id])}}" class="btn btn-warning">EDIT</a></td>
-                 <td> <a href="{{route('patients.destroy',['id'=>$pat->id])}}"class="btn btn-danger">DELETE</a></td>
+          <td> <a href="" class="btn btn-warning">EDIT</a></td>
+                 <td> <a href=""class="btn btn-danger">DELETE</a></td>
 </tr>
 
         @endforeach

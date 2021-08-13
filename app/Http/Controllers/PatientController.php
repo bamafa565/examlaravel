@@ -79,7 +79,7 @@ class PatientController extends Controller
     public function edit($id)
     {
        $patients= patients::find($id);
-       return view('patient.index',[
+       return view('patient.edit',[
       'patients'=>$patients
        ]);
     }
@@ -94,10 +94,21 @@ class PatientController extends Controller
     public function update(Request $request, $id)
     {
         //
-          $patient=patients::find('$patient->id');
-             return view('patient.edit',[
-                           'patient'=>$patient
-                            ]);
+        $update=patients::find($id);
+         $update->update([
+            'nom'=>$request->nom,
+                    'prenom'=>$request->prenom,
+                    'sexe'=>$request->sexe,
+                    'age'=>$request->age,
+                    'adress'=>$request->adress,
+                    'temperature'=>$request->temperature,
+                     'poids'=>$request->poids,
+
+                ]);
+         $patient=patients::all();
+         return view('patient.patient',[
+          'patient'=>$patient]
+           );
     }
 
     /**
@@ -108,13 +119,13 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-    $patient=patients::all();
+
       $post=patients::find($id);
        $post->delete();
-     return view('patient.patient',
-     [
-     'patient'=>$patient
-     ]);
+      $patient=patients::all();
+      return view('patient.patient',[
+      'patient'=>$patient
+       ]);
 
     }
 }

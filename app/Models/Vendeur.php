@@ -7,15 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vendeur extends Model
 {
-   protected $fillable=[
-        'nomperso',
-        'prenomperso',
-       'numTelperso',
-       'adressPerso',
-       'emailperso',
-        'password',
-       'fonctionperso'
-
-
-   ];
+  protected $guarded=[];
+//    protected $fillable=[
+//         'nomperso',
+//         'prenomperso',
+//        'numTelperso',
+//        'adressPerso',
+//        'emailperso',
+//         'password',
+//        'fonctionperso'
+//
+//
+//    ];
 }

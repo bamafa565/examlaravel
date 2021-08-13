@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\adminMail;
 use Illuminate\Http\Request;
-use App\Models\{Personnel,Vendeur,Medicament};
+use Illuminate\Support\Facades\Mail;
+use App\Models\{Personnel,Vendeur,Medicament,vente};
 use App\Http\Controllers\VendeurController;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class LoginVendeurControleur extends Controller
 {
@@ -14,24 +17,7 @@ class LoginVendeurControleur extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function authenticate(Request $request){
-             // Retrive Input
-             $email = $request->email;
-              $pass= $request->password;
 
-
-             if (Vendeur::where('emailperso'==$email ,'password'==$pass)) {
-                 // if success login
-                   $medicament=Medicament::all();
-                             return view('vente.layout',[
-
-                              'Medicament'=>$medicament]);
-
-                 //return redirect()->intended('/details');
-             }
-             // if failed login
-             return redirect('login');
-         }
 
     public function index()
     {
@@ -54,9 +40,38 @@ class LoginVendeurControleur extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+
+
+
+                   $vendeur= Vendeur::where('emailperso', $request->email )->first();
+                   if ($vendeur== null){
+                      return view('vendeur.login');
+                   }
+                     elseif (Hash::check($request->password , $vendeur['password']))
+                    {
+
+                      $medicament=Medicament::all();
+                       return view('vente.layout',[
+                            'Medicament'=>$medicament]);
+                    }else{
+                    throw ValidationException::withMessages([
+                    'email' => __('auth.failed'),
+                    ]);
+                     return view('vendeur.login');  
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     /**

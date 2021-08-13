@@ -71,11 +71,20 @@
 <div class="clear"></div>
 
 <div class="container main" style="margin-top: 100px;">
+
 <div class="row">
+
 <div class="col-md-12" id="status">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="info-box yellow-bg">
-            <i class="fa fa-trademark"></i>
+            <i class="fa fa-trademark"><div>
+     @if (session('status'))
+    <div class="alert alert-success">
+    {{ session('status') }}
+     </div>
+    @endif
+     </div>
+    </i>
             <!-- <div class="count"><br />
 <font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
 <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: count_produit in C:\wamp64-lamp\www\gestionpharm\accueil.php on line <i>85</i></th></tr>
@@ -109,7 +118,7 @@
 
 
     <div class="col-md-4">
-      <a href="{{route('patient')}}">
+      <a href="{{route('patients.index')}}">
           <div class="link">
             <i class="fa fa-users"></i>
             <div class="clear"></div><span>client</span>
@@ -118,7 +127,7 @@
     </div>
 
     <div class="col-md-4">
-      <a href=" {{route('Medicament')}}">
+      <a href=" {{route('Medicament.index')}}">
           <div class="link">
             <i class="fa fa-medkit"></i>
             <div class="clear"></div><span>Medicament</span>
@@ -127,7 +136,7 @@
     </div>
 
 <div class="col-md-4">
-      <a href="{{route('personnel')}}">
+      <a href="{{route('personnel.index')}}">
           <div class="link">
             <i class="fa fa-user"></i>
             <div class="clear"></div><span> Personnelles</span>
@@ -136,7 +145,7 @@
     </div>
 
     <div class="col-md-4">
-      <a href="{{route('consultation')}}">
+      <a href="{{route('consultation.index')}}">
           <div class="link">
             <i class="fa fa-plus"></i>
             <div class="clear"></div><span>consultation</span>
@@ -147,7 +156,7 @@
 
 
      <div class="col-md-4">
-      <a href="{{route('vente')}}">
+      <a href="{{route('vente.index')}}">
           <div class="link">
             <i class="fa fa-ambulance"></i>
             <div class="clear"></div><span>Vente</span>
@@ -165,7 +174,7 @@
     </div>
 
      <div class="col-md-4">
-      <a href="{{route('commande')}}">
+      <a href="{{route('commande.index')}}">
           <div class="link">
             <i class="fa fa-cog"></i>
             <div class="clear"></div><span>COMMANDE</span>
@@ -182,7 +191,7 @@
     </div>
 
     <div class="col-md-4">
-      <a href="{{Route('vendeur')}}">
+      <a href="{{Route('vendeur.index')}}">
           <div class="link">
             <i class="fa fa-medkit"></i>
             <div class="clear"></div><span>NOUVEAU VENDEUR</span>

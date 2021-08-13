@@ -7,7 +7,7 @@
 <h1>LISTE DES COMMANDE EN COURS</h1>
 </center>
 <div style="float:right">
- <a class="btn btn-primary right" href="{{ route('commande.new') }}">ADD</a>
+ <a class="btn btn-primary right" href="{{ route('commande.index') }}">ADD</a>
 </div>
         <thead>
        <th>MATRICULE</th>

@@ -13,7 +13,7 @@
               <label class="">Quantite Cmd : <span style="color:red; font-weight: bold; font-family: Arial, sans-serif ;">(*)</span></label>
               <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-               <input name="quantite" type="text" placeholder="" class="form-control validate[required]" />
+               <input name="quant" type="text" placeholder="" class="form-control validate[required]" />
                </div><br>
                <label class="">Adr Fournisseur: <span style="color:red; font-weight: bold; font-family: Arial, sans-serif ;">(*)</span></label>
               <div class="input-group">

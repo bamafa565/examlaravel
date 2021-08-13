@@ -22,7 +22,7 @@ class CreateCommandesTable extends Migration
             $table->String('datecom');
             $table->date('dateLivraison');
             //$table->foreign('med_id')->references('id')->on('medicaments');
-           // $table->timestamps();
+           $table->timestamps();
         });
     }
 

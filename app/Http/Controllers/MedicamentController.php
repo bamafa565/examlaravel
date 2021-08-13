@@ -88,8 +88,9 @@ class MedicamentController extends Controller
        {
        $Categorie=Categorie::all();
        $Medicament=Medicament::find($id);
+
        return view('Medicament.edit',
-               ['Medicament'=>$personnel,
+               ['Medicament'=>$Medicament,
                 'Categorie' =>$Categorie
                ]);
 
@@ -110,13 +111,14 @@ class MedicamentController extends Controller
                         'description'=>$request->description,
                         'prix'=>$request->prix,
                         'id_cat'=>$request->cat,
-                        'datefabri'=>$request->datefabri,
-                         'dateperem'=>$request->dateperem,
+                        'datefabri'=>$request->peram,
+                         'dateperem'=>$request->create,
                          'dosage'=>$request->dosage,
                      ]);
-                     return view('Medicament.index',[
-                      'Categorie' =>$Categorie
-                     ]);
+                                   $medicament=Medicament::all();
+                                      return view('Medicament.layout',[
+                                       'Medicament'=>$medicament
+                                      ]);
        }
 
        /**
@@ -127,9 +129,11 @@ class MedicamentController extends Controller
         */
        public function destroy($id)
        {
-          $medicament=Medicament::all();
+
           $post=Medicament::find($id);
+          dd($post);
           $post->delete();
+           $medicament=Medicament::all();
           return view('Medicament.layout',[
           'Medicament'=>$medicament
         ]);

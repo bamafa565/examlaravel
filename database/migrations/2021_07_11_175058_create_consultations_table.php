@@ -18,7 +18,7 @@ class CreateConsultationsTable extends Migration
             $table->string('description');
             $table->integer('idp')->unsigned();
             $table->foreign('idp')->references('id')->on('patients');
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

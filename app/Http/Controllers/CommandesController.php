@@ -37,14 +37,15 @@ class CommandesController extends Controller
      */
     public function store(Request $request)
     {
-    commandes::create([
-        'libelle'=>$request->libelle,
-        'quantite'=>$request->quantite,
-        'adressfourni'=>$request->adress,
-        'Numfourni'=>$request->number,
-        'datecom'=>$request->datecom,
-        'dateLivraison'=>$request->dateLiv,
-    ]);
+
+        commandes::create([
+            'libelle'=>$request->libelle,
+            'quantite'=>$request->quant,
+            'adressfourni'=>$request->adress,
+            'Numfourni'=>$request->number,
+            'datecom'=>$request->datecom,
+            'dateLivraison'=>$request->dateLiv,
+        ]);
 
       return view('commande.layout'
       );

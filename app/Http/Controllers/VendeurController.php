@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\PersonnelController;
 use Illuminate\Http\Request;
 use App\Models\{Personnel,Vendeur};
+use Illuminate\Support\Facades\Hash;
 class VendeurController extends Controller
 {
     /**
@@ -45,12 +46,12 @@ class VendeurController extends Controller
           'numTelperso'=>$request->numero,
           'adressPerso'=>$request->adress,
           'emailperso'=>$request->mail,
-          'password'=>$request->password,
+          'password' => Hash::make($request->password),
           'fonctionperso'=>$request->fonction
           ]);
 
       //$personnel=Personnel::all();
-             return view('dashbord.layout');
+             return view('dashbord.layout')->with('status', 'Profile Vendeur create!');
     }
 
     /**

@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class vente extends Model
 {
-    protected $fillable=[
-       'date',
-       'libelle',
-       'prix'
-    ];
+  protected $guarded=[];
+//     protected $fillable=[
+//        'date',
+//        'libelle',
+//        'prix'
+//     ];
 }
